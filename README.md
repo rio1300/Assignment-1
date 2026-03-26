@@ -1,2 +1,80 @@
 # Assignment 1
+  package com.example.myassignment
 
+import android.os.Bundle
+import android.widget.Button
+import android.widget.EditText
+import android.widget.TextView
+import android.widget.Toast
+import androidx.activity.enableEdgeToEdge
+import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowInsetsCompat
+
+class MainActivity : AppCompatActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        enableEdgeToEdge()
+        setContentView(R.layout.activity_main)
+
+        val edtTOD = findViewById<EditText>(R.id.edtTOD)
+        val txtSuggest = findViewById<TextView>(R.id.txtSuggest)
+        val btnSuggest = findViewById<Button>(R.id.btnSuggest)
+        val btnReset = findViewById<Button>(R.id.btnReset)
+
+        btnSuggest.setOnClickListener {
+            val input = edtTOD.text.toString().trim().lowercase()
+            if (input == "") {
+                Toast.makeText(this,"Please enter time of day", Toast.LENGTH_LONG).show()
+/*===================================================================================================================================
+                                                 Reference
+            IMAD_5112 Visual Table of contents Learning Unit 3 "Decisions"  Learning Unit objectives
+            IMAD5112 Module Manual 2026 Page 50
+ */
+            }
+            else if (input == "morning") {
+                txtSuggest.text = "Send a 'Good morning' text to a family member."
+            }
+            else if (input == "mid-morning") {
+                txtSuggest.text = "Reach out to a colleague with a quick 'Thank you.'"
+            }
+            else if (input == "afternoon") {
+                txtSuggest.text = "Share a funny meme or link with a friend."
+            }
+            else if (input == "afternoon snack time") {
+                txtSuggest.text = "Send a quick 'thinking of you' message."
+            }
+            else if (input == "dinner") {
+                txtSuggest.text = "Call a friend or relative for a 5-minute catch-up."
+            }
+            else if (input == "after dinner" || input == "night") {
+                txtSuggest.text = "Leave a thoughtful comment on a friend's post."
+            }
+            else {
+                Toast.makeText(this, "Invalid input", Toast.LENGTH_LONG).show()
+            }
+/*==================================================================================================================================
+                                                            Reference
+                                  IMAD5112 Visual Table of contents Learning Unit2 "Input and Output" Theme 4
+                                  Learning Unit 2 IMAD5112 Module Manual 2026 page 31
+ */
+        }
+
+        btnReset.setOnClickListener {
+            edtTOD.text.clear()
+            txtSuggest.text = ""
+        }
+/*===================================================================================================================================
+                                                            Reference
+                                                            Online Research Youtube
+                                                            https://youtu.be/FQDyYllaZ9c?si=NbARpp_Q8BZgDauk
+   */
+
+
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
+            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
+            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
+            insets
+        }
+    }
+}
