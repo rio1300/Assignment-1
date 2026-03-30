@@ -9,12 +9,23 @@ After entering the time of day it will display a suggestion on what to send and 
 After recieving a suggestion on what to do, a "Reset" button can be Pressed to clear all the displayed information in order to enter new information again 
 
 <img width="912" height="773" alt="Screenshot 2026-03-30 204508" src="https://github.com/user-attachments/assets/a5c6ff4b-4b7d-4ffc-bb2f-6f9cc3396db2" />
-The apps desifn consists of a Edit text-edtTOD
+
+
+
+The apps design consists of a Edit text-edtTOD
 A TextView-txtSuggest
 Two Buttons- BtnSuggest and BtnReset
 A black background
 and an image that Contains Sparks To Customize the screen 
+
+
+
+
 <img width="1785" height="827" alt="Screenshot 2026-03-30 235252" src="https://github.com/user-attachments/assets/f1dd79db-8e57-420f-a69c-e12832496294" />
+
+
+
+
 <img width="1486" height="387" alt="Screenshot 2026-03-30 235317" src="https://github.com/user-attachments/assets/7f57b3b3-b670-439f-8d3e-1231c1e49d92" />
 
 
